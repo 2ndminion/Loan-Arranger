@@ -1,0 +1,16 @@
+<h1>Editing bundle</h1>
+
+<% form_for(@bundle) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_area :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @bundle %> |
+<%= link_to 'Back', bundles_path %>

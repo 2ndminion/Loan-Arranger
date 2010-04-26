@@ -1,0 +1,2 @@
+class Analyst < Person
+end

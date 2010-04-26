@@ -1,0 +1,2 @@
+class Borrower < Person
+end

@@ -1,0 +1,13 @@
+<p>
+  <b>Name:</b>
+  <%=h @lender.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%=h @lender.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_lender_path(@lender) %> |
+<%= link_to 'Back', lenders_path %>

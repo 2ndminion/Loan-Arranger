@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  lender_id: 1
+  borrower_id: 1
+  status: MyString
+  type: MyString
+  amount: 9.99
+  interest_rate: 9.99
+  settlement_date: 2010-04-26 18:24:26
+  locked: false
+
+two:
+  lender_id: 1
+  borrower_id: 1
+  status: MyString
+  type: MyString
+  amount: 9.99
+  interest_rate: 9.99
+  settlement_date: 2010-04-26 18:24:26
+  locked: false
