@@ -2,6 +2,7 @@ class PeopleController < ApplicationController
   # GET /people
   # GET /people.xml
   def index
+    
     @people = Person.all
 
     respond_to do |format|

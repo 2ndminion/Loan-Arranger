@@ -2,6 +2,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :bundles
 
   map.resources :people
+  map.resources :investors, :controller => 'people'
+  map.resources :analysts, :controller => 'people'
+  map.resources :borrowers, :controller => 'people'
 
   map.resources :loans
 
