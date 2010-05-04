@@ -413,3 +413,377 @@ Processing PeopleController#index (for 127.0.0.1 at 2010-04-26 19:54:07) [GET]
 Rendering template within layouts/people
 Rendering people/index
 Completed in 8ms (View: 4, DB: 0) | 200 OK [http://0.0.0.0/people]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-28 20:24:16) [GET]
+
+ActionController::RoutingError (No route matches "/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-28 20:24:19) [GET]
+
+ActionController::RoutingError (No route matches "/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing LendersController#index (for 127.0.0.1 at 2010-04-30 06:41:05) [GET]
+  [4;36;1mLender Load (2.0ms)[0m   [0;1mSELECT * FROM "lenders" [0m
+Rendering template within layouts/lenders
+Rendering lenders/index
+Completed in 173ms (View: 163, DB: 2) | 200 OK [http://0.0.0.0/lenders]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-30 06:41:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing LendersController#index (for 127.0.0.1 at 2010-04-30 18:30:31) [GET]
+  [4;35;1mLender Load (1.4ms)[0m   [0mSELECT * FROM "lenders" [0m
+Rendering template within layouts/lenders
+Rendering lenders/index
+Completed in 17ms (View: 8, DB: 1) | 200 OK [http://0.0.0.0/lenders]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-30 18:30:31) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing LendersController#edit (for 127.0.0.1 at 2010-04-30 18:31:21) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mLender Load (0.2ms)[0m   [0;1mSELECT * FROM "lenders" WHERE ("lenders"."id" = 1) [0m
+Rendering template within layouts/lenders
+Rendering lenders/edit
+Completed in 85ms (View: 80, DB: 0) | 200 OK [http://0.0.0.0/lenders/1/edit]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-30 18:31:21) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing LendersController#index (for 127.0.0.1 at 2010-04-30 18:44:43) [GET]
+  [4;35;1mLender Load (0.6ms)[0m   [0mSELECT * FROM "lenders" [0m
+Rendering template within layouts/lenders
+Rendering lenders/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://0.0.0.0/lenders]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-30 18:44:43) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 19:05:39) [GET]
+
+ActionController::RoutingError (No route matches "/investors" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 19:26:24) [GET]
+
+ActionController::RoutingError (No route matches "/investors" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 19:26:27) [GET]
+
+ActionController::RoutingError (No route matches "/investors" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 19:31:46) [GET]
+  [4;36;1mPerson Load (1.1ms)[0m   [0;1mSELECT * FROM "people" [0m
+
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'investor'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Person.inheritance_column to use another column for that information.):
+  app/controllers/people_controller.rb:5:in `index'
+  <internal:prelude>:8:in `synchronize'
+
+Rendered rescues/_trace (64.9ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LendersController#index (for 127.0.0.1 at 2010-05-03 20:01:08) [GET]
+  [4;35;1mLender Load (0.9ms)[0m   [0mSELECT * FROM "lenders" [0m
+Rendering template within layouts/lenders
+Rendering lenders/index
+Completed in 242ms (View: 211, DB: 1) | 200 OK [http://localhost/lenders]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:01:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:01:26) [GET]
+
+ActionController::RoutingError (No route matches "/analysts" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 20:01:33) [GET]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" [0m
+
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: 'investor'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Person.inheritance_column to use another column for that information.):
+  app/controllers/people_controller.rb:5:in `index'
+  <internal:prelude>:8:in `synchronize'
+
+Rendered rescues/_trace (58.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 20:06:53) [GET]
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/people
+Rendering people/index
+Completed in 101ms (View: 95, DB: 0) | 200 OK [http://localhost/investors]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:06:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 20:08:47) [GET]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/people
+Rendering people/index
+Completed in 12ms (View: 5, DB: 0) | 200 OK [http://localhost/analysts]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:08:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 20:08:51) [GET]
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/people
+Rendering people/index
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/analysts]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:08:51) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 20:12:53) [GET]
+  [4;36;1mPerson Load (0.5ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/people
+Rendering people/index
+Completed in 11ms (View: 5, DB: 0) | 200 OK [http://localhost/analysts]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:12:53) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 20:13:00) [GET]
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/people
+Rendering people/index
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/borrowers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:13:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#show (for 127.0.0.1 at 2010-05-03 20:44:15) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mPerson Load (0.3ms)[0m   [0;1mSELECT * FROM "people" WHERE ("people"."id" = 1) [0m
+Rendering template within layouts/people
+Rendering people/show
+Completed in 54ms (View: 42, DB: 0) | 200 OK [http://localhost/investors/1]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:44:15) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 20:47:05) [GET]
+
+NameError (uninitialized constant PeopleController::People):
+  app/controllers/people_controller.rb:12:in `index'
+  <internal:prelude>:8:in `synchronize'
+
+Rendered rescues/_trace (52.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 20:48:00) [GET]
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/people
+Rendering people/index
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/borrowers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:48:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 20:48:05) [GET]
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/people
+Rendering people/index
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/borrowers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:48:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 20:48:36) [GET]
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/people
+Rendering people/index
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/borrowers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:48:36) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 20:48:38) [GET]
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM "people" [0m
+Rendering template within layouts/people
+Rendering people/index
+Completed in 11ms (View: 4, DB: 0) | 200 OK [http://localhost/borrowers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:48:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing PeopleController#index (for 127.0.0.1 at 2010-05-03 20:55:19) [GET]
+  [4;35;1mPerson Load (0.5ms)[0m   [0mSELECT * FROM "people" [0m
+Rendering template within layouts/people
+Rendering people/index
+Completed in 11ms (View: 4, DB: 1) | 200 OK [http://localhost/borrowers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:55:20) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 20:56:18) [GET]
+
+ActionController::RoutingError (No route matches "/borrowers" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-03 21:06:13) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing LoansController#index (for 127.0.0.1 at 2010-05-04 18:52:17) [GET]
+  [4;36;1mLoan Load (1.6ms)[0m   [0;1mSELECT * FROM "loans" [0m
+Rendering template within layouts/loans
+Rendering loans/index
+Completed in 425ms (View: 419, DB: 2) | 200 OK [http://0.0.0.0/loans]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-04 18:52:17) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
+
+
+Processing LoansController#new (for 127.0.0.1 at 2010-05-04 18:53:28) [GET]
+Rendering template within layouts/loans
+Rendering loans/new
+Completed in 83ms (View: 78, DB: 0) | 200 OK [http://0.0.0.0/loans/new]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-05-04 18:53:28) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/background_grad_tile.png;" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+
+Rendering rescues/layout (not_found)
