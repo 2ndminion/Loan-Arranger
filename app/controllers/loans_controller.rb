@@ -2,12 +2,52 @@ class LoansController < ApplicationController
   # GET /loans
   # GET /loans.xml
   def index
-    @loans = Loan.all
-
+    start = 20
+    size = 10
+    start = params[:start].to_i+1 if !params[:start].blank?   
+    size = params[:size].to_i if !params[:size].blank?
+    #start=(params[:start] || 0).to_i
+    #size = (params[:limit] || 20).to_i
+    page = ((start/size).to_i) if start != 1
+    #sort = "#{params[:sort]}#{params[:dir]}" || "id asc"
+    #@loans = Loan.paginate(:all,
+    #  :page => page,
+    #  :per_page => size,
+    #  :order => sort)
+    
+    if !params[:bundle_id].nil?
+      # Todo: Research using Rails magic to do @loans = Budle.find().loans instead with will_paginate
+      @loans = Loan.paginate(:all, :page => page, :order => "id ASC", :conditions => ["bundle_id=?",params[:bundle_id]])
+    else
+      @loans = Loan.paginate(:all, :page => page)
+    end
+        
+    #@loans = Loan.paginate(:all, :page => page)
+    rtndata = {}
+    rtndata[:total] = @loans.total_entries
+    rtndata[:loans] = @loans.collect { |l| {
+      :id => l.id,
+      :lender => l.lender.name,
+      :status => l.status,
+      :amount => l.amount,
+      :settlement_date => l.settlement_date,
+      :command_show_link => l.id
+    }}
+    
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @loans }
+      format.json { render :json => rtndata.to_json}
     end
+    
+  end
+  
+  def autobundle
+    @loans = Loan.all(:conditions => ["risk > ?",params[:max_risk]])
+    puts "Hello out there from autobundle!"
+    respond_to do |format|
+      format.html #autobundle.html.erb
+      #format.json { render :json => rtndata.to_json}
+    end    
   end
 
   # GET /loans/1

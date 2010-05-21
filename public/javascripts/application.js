@@ -1,5 +1,10 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
+function renderLink(value){
+  //return String.format("{0}",(value==1)?'Yes':'No');
+  return "<a href='loans/show/"+value+"'>Show</a>";
+}
+
 
 Ext.onReady(function(){
 
@@ -18,7 +23,7 @@ var store = new Ext.data.Store({
         totalProperty: 'total',
         id: 'id',
         fields: [
-            'lender', 'status', 'amount', 'settlement_date'
+            'lender', 'status', 'amount', 'settlement_date','command_show_link'
         ]
 
     }),
@@ -57,6 +62,13 @@ var cm = new Ext.grid.ColumnModel([{
        dataIndex: 'settlement_date',
        width: 150
 
+    },{
+
+       header: "Commands",
+       dataIndex: 'command_show_link',
+       width: 150,
+	   renderer: renderLink
+
     }]);
 
 // by default columns are sortable
@@ -82,7 +94,6 @@ var grid = new Ext.grid.GridPanel({
         store: store,
         displayInfo: true,
         displayMsg: 'Displaying records {0} - {1} of {2}',
-
         emptyMsg: "No records to display"
 
     })

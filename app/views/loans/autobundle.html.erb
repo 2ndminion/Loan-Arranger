@@ -1,16 +1,4 @@
-<h1>Listing loans</h1>
-
-<p style="color: green"><%= flash[:notice] %></p>
-
-<!--><div class="table_filter_commands">
-	<input type="checkbox">Bundled/Unbundled<br />
-	From:(mm/dd/yyyy)<input type="text" /> To:(mm/dd/yy)<input type="text" />
-</div>-->
-
-Auto-Bundle  <%= link_to 'New loan', new_loan_path %>
-
-<div id="loans-grid"></div>
-
+<h2>Suggested Loans for Bundle</h2>
 
 <table>
   <tr>
@@ -21,6 +9,7 @@ Auto-Bundle  <%= link_to 'New loan', new_loan_path %>
     <th>Amount</th>
     <th>Interest rate</th>
     <th>Settlement date</th>
+	<th>Risk</th>
     <th>Locked</th>
     <th>Bundle</th>
   </tr>
@@ -34,6 +23,7 @@ Auto-Bundle  <%= link_to 'New loan', new_loan_path %>
     <td><%=h loan.amount %></td>
     <td><%=h loan.interest_rate %></td>
     <td><%=h loan.settlement_date %></td>
+    <td><%=h loan.risk %></td>
     <td><%=h loan.locked %></td>
     <td>Not Bundled</td>
     <td><%= link_to 'Show', loan %></td>

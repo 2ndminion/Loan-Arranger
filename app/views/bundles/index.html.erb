@@ -1,5 +1,25 @@
 <h1>Listing bundles</h1>
-
+<b>Filter by Investment Criteria:</b>
+<div id="investment_criteria_form">
+<% form_tag search_for_best_bundle_path, :method => 'get' do %>
+  <%# error_messages %>
+  <span>
+    <label>Maximum Rate of Risk:</label>
+    <%= text_field :bundle, :max_risk, :size=>3 %>
+  </span>
+  <span>
+    <label>Minimum Amount of Profit:</label>
+    <%= text_field :bundle, :min_profit, :size=>8 %>
+  </span>
+  <span>
+    <label>Maximum Term:</label>
+    <%= text_field :bundle, :max_term, :size=>2 %>
+  </span>
+  <p>
+    <%= submit_tag 'Find Best Bundles', :name => nil %>
+  </p>
+<% end %>
+</div>
 <table>
   <tr>
     <th>Name</th>
@@ -7,8 +27,7 @@
 
 <% @bundles.each do |bundle| %>
   <tr>
-    <td><%=h bundle.name %></td>
-    <td><%= link_to 'Show', bundle %></td>
+    <td><%= link_to bundle.name, bundle_loans_path(bundle) %></td>
     <td><%= link_to 'Edit', edit_bundle_path(bundle) %></td>
     <td><%= link_to 'Destroy', bundle, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>

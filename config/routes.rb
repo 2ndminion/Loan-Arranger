@@ -1,11 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :bundles
+  map.investment_request 'bundles/investment_request', :controller => 'bundles', :action => 'investment_request'
+  map.search_for_best_bundle 'bundles/search_for_best_bundle', :controller => 'bundles', :action => 'search_for_best_bundle'
+  map.resources :bundles, :has_many => :loans
 
   map.resources :people
   map.resources :investors, :controller => 'people'
   map.resources :analysts, :controller => 'people'
   map.resources :borrowers, :controller => 'people'
 
+  map.autobundle 'loans/autobundle', :controller => 'loans', :action => 'autobundle'
   map.resources :loans
 
   map.resources :lenders

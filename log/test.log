@@ -1,0 +1,5 @@
+  [4;36;1mLoan Load (0.3ms)[0m   [0;1mSELECT * FROM "loans" WHERE ("loans"."id" = 1) [0m
+  [4;36;1mLoan Load (0.3ms)[0m   [0;1mSELECT * FROM "loans" WHERE ("loans"."id" = 1) [0m
+  [4;36;1mLoan Load (0.2ms)[0m   [0;1mSELECT * FROM "loans" WHERE ("loans"."id" = 1) [0m
+  [4;36;1mLoan Load (0.3ms)[0m   [0;1mSELECT * FROM "loans" WHERE ("loans"."id" = 1) [0m
+  [4;36;1mLoan Load (0.2ms)[0m   [0;1mSELECT * FROM "loans" WHERE ("loans"."id" = 1) [0m

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100426182745) do
+ActiveRecord::Schema.define(:version => 20100519202749) do
 
   create_table "bundles", :force => true do |t|
     t.text     "name"
@@ -35,6 +35,9 @@ ActiveRecord::Schema.define(:version => 20100426182745) do
     t.boolean  "locked"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "risk"
+    t.integer  "term"
+    t.integer  "bundle_id"
   end
 
   create_table "people", :force => true do |t|
