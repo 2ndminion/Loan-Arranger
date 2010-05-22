@@ -1,28 +1,27 @@
 class LoansController < ApplicationController
+  
   # GET /loans
   # GET /loans.xml
   def index
     start = 20
     size = 10
+    sort = "id ASC"
     start = params[:start].to_i+1 if !params[:start].blank?   
     size = params[:size].to_i if !params[:size].blank?
-    #start=(params[:start] || 0).to_i
-    #size = (params[:limit] || 20).to_i
     page = ((start/size).to_i) if start != 1
-    #sort = "#{params[:sort]}#{params[:dir]}" || "id asc"
+    sort = "#{params[:sort]} #{params[:dir]}" if !params[:sort].blank?
     #@loans = Loan.paginate(:all,
     #  :page => page,
     #  :per_page => size,
     #  :order => sort)
     
     if !params[:bundle_id].nil?
-      # Todo: Research using Rails magic to do @loans = Budle.find().loans instead with will_paginate
-      @loans = Loan.paginate(:all, :page => page, :order => "id ASC", :conditions => ["bundle_id=?",params[:bundle_id]])
+      # Todo: Research using Rails magic to do @loans = Bundle.find().loans instead with will_paginate
+      @loans = Loan.paginate(:all, :page => page, :order => sort, :conditions => ["bundle_id=?",params[:bundle_id]])
     else
-      @loans = Loan.paginate(:all, :page => page)
+      @loans = Loan.paginate(:all, :page => page, :order => sort)
     end
         
-    #@loans = Loan.paginate(:all, :page => page)
     rtndata = {}
     rtndata[:total] = @loans.total_entries
     rtndata[:loans] = @loans.collect { |l| {
@@ -30,8 +29,13 @@ class LoansController < ApplicationController
       :lender => l.lender.name,
       :status => l.status,
       :amount => l.amount,
-      :settlement_date => l.settlement_date,
-      :command_show_link => l.id
+      :interest_rate => l.interest_rate,
+      :risk => l.risk,
+      :term => l.term,
+      :settlement_date => l.created_at.strftime('%B %Y'),
+      :bundle => unless l.bundle.nil? then  l.bundle.name  else  "Not Bundled" end,
+      :command_links => l.id,
+      :selected => false
     }}
     
     respond_to do |format|
@@ -41,12 +45,18 @@ class LoansController < ApplicationController
     
   end
   
-  def autobundle
-    @loans = Loan.all(:conditions => ["risk > ?",params[:max_risk]])
-    puts "Hello out there from autobundle!"
+  def autobundle   
+  end
+  
+  def toggle_lock
+    puts "RECEIVED AJAX CALL ID IS: #{params[:id]}"
+    @loan = Loan.find(params[:id])
+    @loan.toggle!(:locked)
+    rtndata = {}
+    rtndata[:success] = true
     respond_to do |format|
-      format.html #autobundle.html.erb
-      #format.json { render :json => rtndata.to_json}
+      #format.html #autobundle.html.erb
+      format.json { render :json => rtndata.to_json}
     end    
   end
 
