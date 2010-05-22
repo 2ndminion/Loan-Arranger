@@ -1,4 +1,6 @@
 class BundlesController < ApplicationController
+  layout 'application'
+  
   # GET /bundles
   # GET /bundles.xml
   def index

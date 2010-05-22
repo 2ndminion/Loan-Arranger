@@ -1,4 +1,6 @@
 class LendersController < ApplicationController
+  layout 'application'
+  
   # GET /lenders
   # GET /lenders.xml
   def index

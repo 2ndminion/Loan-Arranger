@@ -1,4 +1,5 @@
 class LoansController < ApplicationController
+  layout 'application'
   
   # GET /loans
   # GET /loans.xml
