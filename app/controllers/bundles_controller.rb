@@ -1,5 +1,5 @@
 class BundlesController < ApplicationController
-  layout 'application'
+  #layout 'application'
   
   # GET /bundles
   # GET /bundles.xml
@@ -62,7 +62,7 @@ class BundlesController < ApplicationController
         termTooLongFlag = true if loan.term.to_i > params[:bundle][:max_term].to_i
       }
       risk = sub1/sub2
-      #puts "\n THE PROFIT FOR BUNDLE #{bundle.id} IS: #{profit}\n AND THE MIN PROFIT IS:" + params[:bundle][:min_profit]
+      puts "\n THE PROFIT FOR BUNDLE #{bundle.id} IS: #{profit}\n AND THE MIN PROFIT IS:" + params[:bundle][:min_profit]
       true if risk > params[:bundle][:max_risk].to_i || profit < params[:bundle][:min_profit].to_f || termTooLongFlag == true      
     }
     

@@ -8,10 +8,13 @@
   <%= stylesheet_link_tag 'scaffold' %>
 </head>
 <body>
+  <div id="header"><h1>Loan Arranger</h1></div>
+  <div id="page">
+	<div id="content">
+      <p style="color: green"><%= flash[:notice] %></p>
 
-<p style="color: green"><%= flash[:notice] %></p>
-
-<%= yield %>
-
+      <%= yield %>
+    </div>
+  </div>
 </body>
 </html>
